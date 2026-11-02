@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Event Ticketing System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Event Ticketing System</h1>
+  <nav>
+    <button id="tabBook" class="on">Book tickets</button>
+    <button id="tabOrg">Organizer</button>
+  </nav>
+</header>
+
+<main>
+  <!-- BOOKER -->
+  <section id="bookView">
+    <h2>Upcoming events</h2>
+    <div id="eventList"></div>
+
+    <div id="bookPanel" class="panel" hidden>
+      <h3 id="selName"></h3>
+      <label>Your name <input id="uName" maxlength="40"></label>
+      <label>Tickets <input id="qty" type="number" min="1" value="1"></label>
+      <p class="total">Total: <b id="total">Rs.0</b></p>
+      <button id="bookBtn">Book tickets</button>
+      <p id="bookMsg" class="msg" role="status"></p>
+    </div>
+
+    <div id="receipt" class="receipt" hidden></div>
+
+    <div class="panel">
+      <h3>Cancel a booking</h3>
+      <label>Booking ID <input id="cid" type="number"></label>
+      <label>Name used to book <input id="cname"></label>
+      <button id="cancelBtn">Cancel booking</button>
+      <p id="cancelMsg" class="msg" role="status"></p>
+    </div>
+  </section>
+
+  <!-- ORGANIZER -->
+  <section id="orgView" hidden>
+    <div id="login" class="panel">
+      <h3>Organizer login</h3>
+      <label>Password <input id="pw" type="password"></label>
+      <button id="loginBtn">Log in</button>
+      <p id="loginMsg" class="msg" role="status"></p>
+    </div>
+
+    <div id="dash" hidden>
+      <div class="panel">
+        <h3>Add an event</h3>
+        <label>Name <input id="eName"></label>
+        <label>Date <input id="eDate" type="date"></label>
+        <label>Price (Rs.) <input id="ePrice" type="number" min="0"></label>
+        <label>Seats <input id="eSeats" type="number" min="1"></label>
+        <button id="addBtn">Add event</button>
+        <p id="addMsg" class="msg" role="status"></p>
+      </div>
+
+      <h3>Your events</h3>
+      <div class="wrap"><table id="evTable"></table></div>
+
+      <h3>All bookings</h3>
+      <div class="wrap"><table id="bkTable"></table></div>
+      <p class="total">Total revenue: <b id="rev">Rs.0</b></p>
+      <button id="logoutBtn" class="ghost">Log out</button>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
